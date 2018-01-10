@@ -74,10 +74,16 @@ class App extends Component {
               </ul>
             </div>
           </div>
+          <div className="buttons justify-content-between align-items-center">
+            <span className="">
+              <button type="button" className="btn btn-outline-primary btn-lg" onClick="">Uncheck all items</button>
+            </span>
+            <span className="">
+              <button type="button" className="btn btn-outline-danger btn-lg" onClick="">Delete all items</button>
+            </span>
+          </div>
         </div>
-        
       </div>
-      // </div>
     );
   }
 }
