@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../styles/App.css';
 
-import {AddItem, UncheckedItem} from '../components/index';
+import {AddItem, UncheckedItem, DeleteAll} from '../components/index';
 import { List,} from '../containers/index';
 
 class App extends Component {
@@ -29,9 +29,10 @@ class App extends Component {
          />
           <div className="buttons justify-content-between align-items-center">
             <UncheckedItem/>
-            <span className="">
-              <button type="button" className="btn btn-outline-danger btn-lg" onClick="">Delete all items</button>
-            </span>
+
+            
+            <DeleteAll />
+          
           </div>
         </div>
       </div>
