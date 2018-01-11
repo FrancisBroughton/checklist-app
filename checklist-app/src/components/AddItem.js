@@ -16,12 +16,20 @@ render () {
   return (
     <div className= "form-group">
     {/* <div class="input-group mb-3"> */}
-    <input type="text" class="form-control" 
+    <input 
+    type="text" 
+    class="form-control" 
     placeholder="Add Item...." 
     aria-label="Add Item...." 
-    aria-describedby="basic-addon2"/>
+    aria-describedby="basic-addon2"
+    ref="add new Item"
+    onChange={ this.handleInputChange}
+    />
   <div class="input-group-append">
-    <button type="button" class="btn btn-outline-secondary">Add item</button>
+    <button 
+    type="submit" 
+    class="btn btn-outline-secondary"
+    onClick=""> Add item</button>
   </div>
   </div>
   );
