@@ -32,12 +32,18 @@ UncheckedItem = () => {
   })
 }
 
+deleteAllItems = () => {
+  this.setState({
+    items: []
+  })
+}
+
   render () {
     return (
       <div>
         <div class="container-fluid">
           <h1>Checklist</h1>
-          
+
           <AddItem 
             handleNewItem={ this.addItem }
           />
@@ -55,7 +61,8 @@ UncheckedItem = () => {
           <div className="buttons justify-content-between align-items-center">
             <UncheckedItem handleUncheckedItems= { this.UncheckedItems }/>
 
-            <DeleteAll />
+            <DeleteAll 
+                handleDeleteAll={ this.deleteAllItems }/>
           
           </div>
         </div>
