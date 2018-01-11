@@ -8,7 +8,7 @@ class List extends Component {
       <div className="card border-success mb-3">
         <div className="card-header">
           <ItemList/>
-          <ItemList/>
+        
         </div>
       </div>
     );
