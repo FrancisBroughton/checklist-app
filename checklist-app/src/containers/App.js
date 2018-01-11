@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../styles/App.css';
-
+import _ from 'lodash'
 import {AddItem, UncheckedItem, DeleteAll} from '../components/index';
 import { List,} from '../containers/index';
 
@@ -10,6 +10,15 @@ class App extends Component {
      items: []
   }
 
+   addItem = (name) => {
+       this.setState({
+         items: [{
+           id: _.uniqueId(),
+           name: name,
+           packed: false
+         }, ...this.state.items]
+       })
+     }
 
   render () {
     return (
@@ -30,7 +39,7 @@ class App extends Component {
           <div className="buttons justify-content-between align-items-center">
             <UncheckedItem/>
 
-            
+
             <DeleteAll />
           
           </div>

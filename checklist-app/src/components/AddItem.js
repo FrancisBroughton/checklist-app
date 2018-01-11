@@ -12,6 +12,19 @@ handleInputChange = (event) => {
   })
 }
 
+
+handleSubmitNewItem = (event) => {
+  event.preventDefault();
+  if (this.state.inputValue.length >= 1) {
+    this.props.handleNewItem(this.state.inputValue);
+    this.setState({
+      inputValue: ''
+    });
+    this.refs.addNewItem.value = ''
+  }
+}
+
+
 render () {
   return (
     <div className= "form-group">
@@ -25,11 +38,12 @@ render () {
     ref="add new Item"
     onChange={ this.handleInputChange}
     />
+
   <div class="input-group-append">
     <button 
     type="submit" 
     class="btn btn-outline-secondary"
-    onClick=""> Add item</button>
+    onClick={ this.handleSubmitNewItem }> Add item</button>
   </div>
   </div>
   );
