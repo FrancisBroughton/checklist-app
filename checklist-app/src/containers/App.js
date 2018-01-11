@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import '../styles/App.css';
 
-import AddItem from '../components/AddItem';
-import { List} from '../containers/index';
+import {AddItem, UncheckedItem} from '../components/index';
+import { List,} from '../containers/index';
 
 class App extends Component {
 
@@ -28,9 +28,7 @@ class App extends Component {
            header="You've checked the following items..."
          />
           <div className="buttons justify-content-between align-items-center">
-            <span className="">
-              <button type="button" className="btn btn-outline-primary btn-lg" onClick="">Uncheck all items</button>
-            </span>
+            <UncheckedItem/>
             <span className="">
               <button type="button" className="btn btn-outline-danger btn-lg" onClick="">Delete all items</button>
             </span>
