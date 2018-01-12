@@ -39,6 +39,8 @@ deleteAllItems = () => {
 }
 
   render () {
+    const checked = this.state.items.filter(item => item.checked);
+    const unchecked = this.state.items.filter(item => !item.checked);
     return (
       <div>
         <div class="container-fluid">
@@ -49,11 +51,13 @@ deleteAllItems = () => {
           />
 
          <List 
+          items= {unchecked}
            title="Unchecked Tasks"
            header="These items still need to checked!"
          />
 
          <List
+         items= {checked}
            title="Checked Tasks"
            header="You've checked the following items..."
          />

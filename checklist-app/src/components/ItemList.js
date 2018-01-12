@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 class ItemList extends Component {
 
   render () {
+    const { item: { id, name, checked } } = this.props;
     return (
       <div>
         <div className="header">Checklist Items ( count of items )</div>
@@ -12,10 +13,10 @@ class ItemList extends Component {
               <li className="list-group-item d-flex justify-content-between align-items-center">
                 <div className="form-check">
                   <label className="form-check-label">
-                    <input className="form-check-input" type="checkbox" value="" checked="" onChange=""/> Item 1
+                    <input className="form-check-input" value= {id } checked={ checked } onChange={ this.handleToggleClick }/>{ name }
                   </label>
                 </div>
-                <button type="button" className="btn btn-outline-danger btn-sm" onClick="">Remove</button>
+                <button type="button" className="btn btn-outline-danger btn-sm" onClick={ this.handleRemoveClick }>Remove</button>
               </li>
             </div>
           </ul>
