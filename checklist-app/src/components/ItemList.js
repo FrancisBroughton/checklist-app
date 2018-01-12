@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 
 class ItemList extends Component {
 
+  handleRemoveClick = (event) => {
+       event.preventDefault()
+        this.props.handleRemoveItem(this.props.item.id)
+   }
+    
+
   render () {
     const { item: {
       id,

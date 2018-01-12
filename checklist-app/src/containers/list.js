@@ -16,6 +16,7 @@ class List extends Component {
             <ul className="list-group" key={ item.id }>
               <ItemList
                 item={ item }
+                handleRemoveItem={ this.props.handleRemoveItem }
               />
             </ul>
           ))}

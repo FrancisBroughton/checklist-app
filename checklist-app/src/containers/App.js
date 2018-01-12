@@ -10,6 +10,13 @@ class App extends Component {
      items: []
   }
 
+  removeItem = (id) => {
+    this.setState({
+      items: this.state.items.filter((item) => item.id !== id)
+    })
+  }
+    
+
    addItem = (name) => {    this.setState({
     items: [{
       id: _.uniqueId(),
@@ -54,12 +61,14 @@ deleteAllItems = () => {
           items= {unchecked}
            title="Unchecked Tasks"
            header="These items still need to checked!"
+           handleRemoveItem={ this.removeItem }
          />
 
          <List
          items= {checked}
            title="Checked Tasks"
            header="You've checked the following items..."
+           handleRemoveItem={ this.removeItem }
          />
 
           <div className="buttons justify-content-between align-items-center">
