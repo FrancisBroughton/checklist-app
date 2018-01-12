@@ -17,6 +17,7 @@ class List extends Component {
               <ItemList
                 item={ item }
                 handleRemoveItem={ this.props.handleRemoveItem }
+                handleToggleItem={ this.props.handleToggleItem }
               />
             </ul>
           ))}

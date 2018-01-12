@@ -45,32 +45,49 @@ deleteAllItems = () => {
   })
 }
 
+toggleItem = (id) => {
+  this.setState({
+    items: this.state.items.map((item) => {
+      if (item.id === id) {
+        return {
+          id: item.id,
+          name: item.name,
+          checked: !item.checked
+        }
+      }
+      return item;
+    })
+  })
+}
   render () {
     const checked = this.state.items.filter(item => item.checked);
     const unchecked = this.state.items.filter(item => !item.checked);
     return (
-      <div>
-        <div class="container-fluid">
+      <div className= "container-fluid">
+        <div className="app">
           <h1>Checklist</h1>
 
           <AddItem 
             handleNewItem={ this.addItem }
           />
-
+          { this.state.items.length >= 1 ?
+          <div>
          <List 
           items= {unchecked}
            title="Unchecked Tasks"
            header="These items still need to checked!"
            handleRemoveItem={ this.removeItem }
+           handleToggleItem={ this.toggleItem }
          />
 
-         <List
+        <List
          items= {checked}
            title="Checked Tasks"
            header="You've checked the following items..."
            handleRemoveItem={ this.removeItem }
+           handleToggleItem={ this.toggleItem }
          />
-
+          
           <div className="buttons justify-content-between align-items-center">
             <UncheckedItem handleUncheckedItems= { this.UncheckedItems }/>
 
@@ -78,11 +95,11 @@ deleteAllItems = () => {
                 handleDeleteAll={ this.deleteAllItems }/>
           
           </div>
-        </div>
+         </div> : '' }
+      </div>
       </div>
     );
   }
 }
 
 export default App;
-

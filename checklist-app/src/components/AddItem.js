@@ -14,18 +14,20 @@ handleInputChange = (event) => {
 
 
  handleSubmitNewItem = (event) => {
-     event.preventDefault();
-     this.props.handleNewItem(this.state.inputValue);
-     this.setState({
-       inputValue: ''
-     });
-     this.refs.addNewItem.value = ''
-   }
+    event.preventDefault();
+      if (this.state.inputValue.length >= 1) {
+        this.props.handleNewItem(this.state.inputValue);
+        this.setState({
+          inputValue: ''
+        });
+        this.refs.addNewItem.value = ''
+  }
+}
 
 
 render () {
   return (
-    <div className= "form-group">
+    <div >
     {/* <div class="input-group mb-3"> */}
     <input 
     type="text" 
@@ -47,6 +49,4 @@ render () {
   );
 }
 }
-
-
 export default AddItem;
