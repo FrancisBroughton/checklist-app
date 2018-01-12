@@ -10,8 +10,8 @@ class List extends Component {
       <div className="card border-success mb-3">
         <div className="card-header">
           <div className="header">{ title } Items ({ count })</div>
-          { count === 0 ? '' : <p className="card-text">{ header }</p> }
-          <ItemList/>
+          { count === 0 ? '' : 
+            <p className="card-text">{ header }</p> }
           {items.map((item) => (
             <ul className="list-group" key={ item.id }>
               <ItemList
